@@ -8,7 +8,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
+	
 	<bean id="user" name="usr" class="com.bigdata2017.springcontainer.User"/>
 	<bean id="user4" class="com.bigdata2017.springcontainer.User"/>
 
@@ -25,5 +25,38 @@
 		<property name="no" value="2"/>
 		<property name="name" value="또치"/>
 	</bean>	
+	
+	<bean 
+		id="user7" 
+		class="com.bigdata2017.springcontainer.User">
+		<property name="no" value="3"/>
+		<property name="name" value="도우넛"/>
+		<property name="friend" ref="friend7"/>
+	</bean>
 
+	<bean
+		id="friend7"
+		class="com.bigdata2017.springcontainer.Friend">
+		<constructor-arg value="희동이"/>
+	</bean>
+			
+	<bean 
+		id="user8" 
+		class="com.bigdata2017.springcontainer.User">
+		<property name="no" value="4"/>
+		<property name="name" value="둘리"/>
+		<property name="friend">
+			<bean
+				class="com.bigdata2017.springcontainer.Friend">
+				<constructor-arg value="길동"/>
+			</bean>		
+		</property>
+		<property name="friends">
+			<list>
+				<value>도우넛</value>
+				<value>마이콜</value>
+				<value>또치</value>
+			</list>
+		</property>
+	</bean>	
 </beans>

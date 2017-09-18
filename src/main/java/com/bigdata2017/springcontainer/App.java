@@ -40,6 +40,15 @@ public class App {
     	User user6 = (User)ac.getBean( "user6" );
     	System.out.println( user6 );
     	
+    	// DI
+    	User user7 = (User)ac.getBean( "user7" );
+    	System.out.println( user7 );
+    	
+    	// DI2
+    	User user8 = (User)ac.getBean( "user8" );
+    	System.out.println( user8 );    	
+    	
+    	
     }
     
     public static void testBeanFactory() {
